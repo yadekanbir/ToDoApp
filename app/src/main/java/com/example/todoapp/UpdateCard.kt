@@ -43,12 +43,15 @@ class UpdateCard : AppCompatActivity() {
                         Entity(
                             pos,
                             create_title.text.toString(),
-                            create_priority.text.toString()))
+                            create_priority.text.toString()
+                        )
+                    )
                 }
                 DataObject.updateData(
                     pos,
                     create_title.text.toString(),
-                    create_priority.text.toString())
+                    create_priority.text.toString()
+                )
 
                 myIntent()
             }

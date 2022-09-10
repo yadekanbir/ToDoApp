@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do").build()
+            applicationContext, myDatabase::class.java, "To_Do"
+        ).build()
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)
             startActivity(intent)
