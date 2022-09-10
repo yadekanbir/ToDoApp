@@ -58,9 +58,9 @@ class UpdateCard : AppCompatActivity() {
         }
     }
 
-    fun myIntent() {
+    private fun myIntent() {
         val intent = Intent(this, MainActivity::class.java)
-        finish()
         startActivity(intent)
+        finish()
     }
 }

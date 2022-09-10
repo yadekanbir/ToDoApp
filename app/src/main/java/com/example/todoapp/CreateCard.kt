@@ -1,10 +1,8 @@
 package com.example.todoapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_create_card.*
 import kotlinx.coroutines.GlobalScope
@@ -30,8 +28,8 @@ class CreateCard : AppCompatActivity() {
                     database.dao().insertTask(Entity(0, title, priority))
                 }
                 val intent = Intent(this, MainActivity::class.java)
-                finish()
                 startActivity(intent)
+                finish()
             }
         }
     }

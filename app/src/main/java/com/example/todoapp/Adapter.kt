@@ -5,12 +5,13 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.view.view.*
 
 class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolder>() {
+
+    var onClick: ((id: String, position: Int) -> Unit)? = null
+
     class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title = itemView.title
         var priority = itemView.priority
@@ -30,10 +31,8 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
         }
         holder.title.text = data[position].title
         holder.priority.text = data[position].priority
-        holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, UpdateCard::class.java)
-            intent.putExtra("id", position)
-            holder.itemView.context.startActivity(intent)
+        holder.itemView.setOnClickListener{
+            onClick?.invoke("id", position)
         }
     }
 
