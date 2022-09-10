@@ -9,11 +9,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
-// entity - table
-// dao - queries
-// database
-
 class MainActivity : AppCompatActivity() {
     private lateinit var database: myDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
